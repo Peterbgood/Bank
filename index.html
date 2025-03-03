@@ -1,4 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Website</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Add your CSS file here -->
+</head>
+<body>
+    <!-- Header Section: Logo, Menu, and Login -->
+    <header>
+        <div class="top-bar">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="/">
+                    <img src="logo.png" alt="Bank Name Logo">
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="menu">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#accounts">Accounts</a></li>
+                    <li><a href="#loans">Loans</a></li>
+                    <li><a href="#support">Support</a></li>
+                </ul>
+                <!-- Hamburger Icon for Mobile (Hidden by Default) -->
+                <button class="hamburger" aria-label="Toggle Menu">
+                    &#9776; <!-- Unicode for hamburger icon -->
+                </button>
+            </nav>
+
+            <!-- Login Box -->
+            <div class="login-box">
+                <button class="login-btn">Login</button>
+                <!-- Dropdown (hidden by default, toggled with JS/CSS) -->
+                <div class="login-dropdown">
+                    <form action="/login" method="POST">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                        <button type="submit">Sign In</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section: Image, Static Text, and Single CTA -->
+    <section class="hero">
+        <img src="hero-image.jpg" alt="Bank Hero Image" class="hero-image">
+        <div class="hero-content">
+            <h1>Secure Banking for Your Future</h1>
+            <a href="#open-account" class="hero-cta">Open an Account</a>
+        </div>
+    </section>
+
+    <!-- CTA Section: 3 Call-to-Action Buttons -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <a href="#loans" class="cta-btn">Explore Loans</a>
+            <a href="#accounts" class="cta-btn">Manage Accounts</a>
+            <a href="#contact" class="cta-btn">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Optional Footer (for completeness) -->
+    <footer>
+        <p>&copy; 2025 Bank Name. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script> <!-- Add your JS file here -->
+</body>
+</html>
