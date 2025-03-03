@@ -1,1 +1,25 @@
-
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.hero {
+    position: relative;
+}
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.cta-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+@media (max-width: 768px) {
+    .menu ul { display: none; }
+    .hamburger { display: block; }
+    .cta-container { grid-template-columns: 1fr; }
+}
