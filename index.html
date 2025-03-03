@@ -4,73 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bank Website</title>
-    <link rel="stylesheet" href="Styles.css"> <!-- Add your CSS file here -->
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Optional Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Header Section: Logo, Menu, and Login -->
-    <header>
-        <div class="top-bar">
-            <!-- Logo -->
-            <div class="logo">
-                <a href="/">
-                    <img src="logo.png" alt="Bank Name Logo">
-                </a>
-            </div>
+    <header class="bg-light py-2">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Logo -->
+                <div class="col-auto">
+                    <a href="/" class="navbar-brand">
+                        <img src="logo.png" alt="Bank Name Logo" height="40">
+                    </a>
+                </div>
 
-            <!-- Navigation Menu -->
-            <nav class="menu">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#accounts">Accounts</a></li>
-                    <li><a href="#loans">Loans</a></li>
-                    <li><a href="#support">Support</a></li>
-                </ul>
-                <!-- Hamburger Icon for Mobile (Hidden by Default) -->
-                <button class="hamburger" aria-label="Toggle Menu">
-                    &#9776; <!-- Unicode for hamburger icon -->
-                </button>
-            </nav>
+                <!-- Navigation Menu -->
+                <nav class="col navbar navbar-expand-lg">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#accounts">Accounts</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#loans">Loans</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#support">Support</a></li>
+                        </ul>
+                    </div>
+                </nav>
 
-            <!-- Login Box -->
-            <div class="login-box">
-                <button class="login-btn">Login</button>
-                <!-- Dropdown (hidden by default, toggled with JS/CSS) -->
-                <div class="login-dropdown">
-                    <form action="/login" method="POST">
-                        <label for="username">Username:</label>
-                        <input type="text" id="username" name="username" required>
-                        <label for="password">Password:</label>
-                        <input type="password" id="password" name="password" required>
-                        <button type="submit">Sign In</button>
-                    </form>
+                <!-- Login Box -->
+                <div class="col-auto ms-auto">
+                    <div class="dropdown">
+                        <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Login
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end p-3" style="min-width: 250px;">
+                            <form action="/login" method="POST">
+                                <div class="mb-3">
+                                    <label for="username" class="form-label">Username</label>
+                                    <input type="text" class="form-control" id="username" name="username" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="password" name="password" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Sign In</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 
     <!-- Hero Section: Image, Static Text, and Single CTA -->
-    <section class="hero">
-        <img src="hero-image.jpg" alt="Bank Hero Image" class="hero-image">
-        <div class="hero-content">
-            <h1>Secure Banking for Your Future</h1>
-            <a href="#open-account" class="hero-cta">Open an Account</a>
+    <section class="hero bg-dark text-white text-center py-5" style="background: url('hero-image.jpg') no-repeat center/cover;">
+        <div class="container">
+            <div class="py-5">
+                <h1 class="display-4 fw-bold">Secure Banking for Your Future</h1>
+                <a href="#open-account" class="btn btn-primary btn-lg mt-3">Open an Account</a>
+            </div>
         </div>
     </section>
 
     <!-- CTA Section: 3 Call-to-Action Buttons -->
-    <section class="cta-section">
-        <div class="cta-container">
-            <a href="#loans" class="cta-btn">Explore Loans</a>
-            <a href="#accounts" class="cta-btn">Manage Accounts</a>
-            <a href="#contact" class="cta-btn">Contact Us</a>
+    <section class="cta-section py-5">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-3 g-4 text-center">
+                <div class="col">
+                    <a href="#loans" class="btn btn-outline-primary btn-lg w-100">Explore Loans</a>
+                </div>
+                <div class="col">
+                    <a href="#accounts" class="btn btn-outline-primary btn-lg w-100">Manage Accounts</a>
+                </div>
+                <div class="col">
+                    <a href="#contact" class="btn btn-outline-primary btn-lg w-100">Contact Us</a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Optional Footer (for completeness) -->
-    <footer>
-        <p>&copy; 2025 Bank Name. All rights reserved.</p>
+    <!-- Footer -->
+    <footer class="bg-light text-center py-3">
+        <div class="container">
+            <p class="mb-0">© 2025 Bank Name. All rights reserved.</p>
+        </div>
     </footer>
 
-    <script src="script.js"></script> <!-- Add your JS file here -->
+    <!-- Bootstrap JS Bundle (with Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Optional Custom JS -->
+    <script src="script.js"></script>
 </body>
 </html>
